@@ -12,33 +12,33 @@
 </head>
 <body>
     <div class="container">
-        <form action="POST">
+        <form>
             <div class="form-title-container">
                 <p class="form-title">Please Enter Book Info</p>
                 <i class="fa-solid fa-circle-info"></i>
             </div>
             <div class="book-input">
                 <label for="book-title">Title:</label>
-                <input type="text" id="book-title" name="book-title" placeholder="e.g. War and Peace">
+                <input class="title-input" type="text" id="book-title" name="book-title" placeholder="e.g. War and Peace">
             </div>
             <div class="book-input" >
                 <label for="author">Author:</label>
-                <input type="text" name="author" id="author" placeholder="e.g. Tolstoy">
+                <input class="author-input" type="text" name="author" id="author" placeholder="e.g. Tolstoy">
             </div>
             <div class="book-input">
                 <label for="pages">Pages:</label>
-                <input type="number" id="pages" name="pages" placeholder="e.g. 345">
+                <input class="page-input" type="number" id="pages" name="pages" placeholder="e.g. 345">
             </div>
             <div class="radio-buttons">
                 <p class="question">Have you read the book?</p>
                 <div class="book-button">
                     <div>
                         <label for="read">Yes</label>
-                        <input type="radio" id="read" name="read" value="yes">
+                        <input type="radio" id="yes" name="read">
                     </div>
                     <div>
                         <label for="no">No</label>
-                        <input type="radio" id="no" name="read" value="no">
+                        <input type="radio" id="no" name="read">
                     </div>
                 </div>
             </div>
@@ -49,40 +49,6 @@
                 <i class="fa-solid fa-book"></i>
                 <p >Your Library</p>
             </div>
-            <div class="book-card">
-               <div><span>Title:</span> War and Peace</div>
-               <div><span>Author:</span> Tolstoy</div>
-               <div><span>Pages:</span> 345</div>
-               <div><span>Already read:</span> True</div>
-               <div><span>Book number:</span> 1</div>
-               <button class="close-button">+</button>
-            </div>
-            <div class="book-card">
-               <div><span>Title:</span> War and Peace</div>
-               <div><span>Author:</span> Tolstoy</div>
-               <div><span>Pages:</span> 345</div>
-               <div><span>Already read:</span> True</div>
-               <div><span>Book number:</span> 2</div>
-               <button class="close-button">+</button>
-            </div>
-            <div class="book-card">
-               <div><span>Title:</span> War and Peace</div>
-               <div><span>Author:</span> Tolstoy</div>
-               <div><span>Pages:</span> 345</div>
-               <div><span>Already read:</span> True</div>
-               <div><span>Book number:</span> 3</div>
-               <button class="close-button">+</button>
-            </div>
-            <div class="book-card">
-               <div><span>Title:</span> War and Peace</div>
-               <div><span>Author:</span> Tolstoy</div>
-               <div><span>Pages:</span> 345</div>
-               <div><span>Already read:</span> True</div>
-               <div><span>Book number:</span> 4</div>
-               <button class="close-button">+</button>
-            </div>
-            
-            
         </div>
     </div>
     <script src="script.js"></script>
