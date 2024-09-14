@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body{
+    background: url(eugenio-mazzone-6ywyo2qtaZ8-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin: 3rem;
+    background-color: rgba(169, 152, 168, 0.9);
+    height: 88vh;
+    border-radius: 10px;
+    box-shadow: 0px -10px 20px -11px rgba(0,0,0,0.45), 0px 25px 20px -20px rgba(0,0,0,0.45);
+}
+
+.library-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr repeat(3, 4fr);
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.library-title{
+    grid-column: 1 / 4;
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.library-title p{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.fa-book{
+    font-size: 2rem;
+}
+
+.book-card{
+    background-color: rgb(244, 196, 196);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    color: rgb(88, 81, 81);
+    position: relative;
+}
+
+.close-button{
+    border-radius: 50px;
+    width: 1.2rem;
+    transform: rotate(45deg);
+    border: none;
+    background-color: rgb(196, 86, 86);
+    font-weight: 700;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+form{
+    height: 20rem;
+    width: 16rem;
+    padding: 1rem;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    border-radius: 10px;
+    background-color: rgb(232, 225, 195);
+}
+
+.form-title{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.form-title-container{
+    display: flex;
+    gap: 0.5rem;
+}
+
+span{
+    font-weight: 700;
+}
+
+.book-input{
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-input label, .book-button label{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.book-button{
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.submit-button{
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgb(218, 117, 117);
+    background-color: rgb(244, 196, 196);
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+}
+
+input{
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+
+button{
+    cursor: pointer;
+}
