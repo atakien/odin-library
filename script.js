@@ -29,6 +29,10 @@ function Book(title, author, page, read) {
     this.read = read;
 }
 
+Book.prototype.toggleReadStatus = function() {
+    this.read = this.read === "yes" ? "no" : "yes";
+};
+
 function addBookToLibrary() {
     cardContainer.innerHTML = "";
 
@@ -37,7 +41,7 @@ function addBookToLibrary() {
         <div><span>Title:</span> ${book.title}</div>
         <div><span>Author:</span> ${book.author}</div>
         <div><span>Pages:</span> ${book.page}</div>
-        <div><span>Already Read:</span> ${book.read}</div>
+        <div><span>Already Read:</span> ${book.read}<button class="change-status" data-index="${index}">Change</button></div>
         <div><span>Book Number:</span> ${index + 1}</div>
         <button class="close-button" data-index="${index}">+</button>`;
 
@@ -55,4 +59,13 @@ function addBookToLibrary() {
             addBookToLibrary(); 
         });
     });
+
+    const changeStatus = document.querySelectorAll(".change-status");
+    changeStatus.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const statusIndex = e.target.getAttribute("data-index");
+            myLibrary[statusIndex].toggleReadStatus(); 
+            addBookToLibrary();
+        })
+    })
 }
