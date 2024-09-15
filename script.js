@@ -1,5 +1,5 @@
 const formEl = document.querySelector("form");
-const libraryContainer = document.querySelector(".library-container");
+const cardContainer = document.querySelector(".cards-container");
 
 const myLibrary = [];
 
@@ -17,7 +17,7 @@ formEl.addEventListener("submit", (e) => {
     myLibrary.push(bookInfo);
     formEl.reset();
     
-    addBookToLibrary(bookInfo);
+    addBookToLibrary();
     
     console.log(myLibrary);
 });
@@ -29,18 +29,30 @@ function Book(title, author, page, read) {
     this.read = read;
 }
 
-function addBookToLibrary(book) {
-    const cardTemplate = `
-        <div class="book-card">
-            <div><span>Title:</span> ${book.title}</div>
-            <div><span>Author:</span> ${book.author}</div>
-            <div><span>Pages:</span> ${book.page}</div>
-            <div><span>Already read:</span> ${book.read}</div>
-            <button class="close-button">+</button>
-        </div>`;
-    
-    const cardElement = document.createElement('div');
-    cardElement.innerHTML = cardTemplate;
-    
-    libraryContainer.appendChild(cardElement);
+function addBookToLibrary() {
+    cardContainer.innerHTML = "";
+
+    myLibrary.forEach((book, index) => {
+        const cardTemplate = `
+        <div><span>Title:</span> ${book.title}</div>
+        <div><span>Author:</span> ${book.author}</div>
+        <div><span>Pages:</span> ${book.page}</div>
+        <div><span>Already Read:</span> ${book.read}</div>
+        <div><span>Book Number:</span> ${index + 1}</div>
+        <button class="close-button" data-index="${index}">+</button>`;
+
+        const cardElement = document.createElement('div');
+        cardElement.innerHTML = cardTemplate;
+        cardElement.className = "book-card";
+        cardContainer.appendChild(cardElement);
+    });
+
+    const removeButtons = document.querySelectorAll(".close-button");
+    removeButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const index = e.target.getAttribute("data-index");
+            myLibrary.splice(index, 1); 
+            addBookToLibrary(); 
+        });
+    });
 }
